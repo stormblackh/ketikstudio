@@ -26,6 +26,16 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        // Gambar situs demo: perlakuan sama dengan gambar karya
+        source: "/demo/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, stale-while-revalidate=604800",
+          },
+        ],
+      },
+      {
         // Font: jarang berubah, cache panjang
         source: "/:all*(svg|woff2)",
         headers: [

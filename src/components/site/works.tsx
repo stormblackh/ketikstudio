@@ -120,9 +120,7 @@ function ProjectDialog({ project, children }: { project: Project; children: Reac
             </div>
 
             <p className="mt-9 border-t border-ink/10 pt-4 font-mono text-[10px] leading-relaxed tracking-[0.15em] text-ink/45 uppercase">
-              {project.liveUrl
-                ? "* Yang ini benar-benar jalan — bukan mockup. Ada yang mau ditanyakan soal cara membangunnya? Sapa saja."
-                : "* Tiap studi kasus di sini kutulis lengkap dari riset sampai kode biar kamu bisa menilai cara kerjaku langsung. Mau lihat demo atau detail teknisnya? Minta saja."}
+              * Semua proyek di sini kubangun sendiri dari nol — desain, kode, sampai jadi. Tekan buka demo dan buktikan sendiri.
             </p>
           </div>
         </div>
@@ -196,13 +194,13 @@ export function WorksGrid({ limit }: { limit?: number }) {
                     ))}
                   </div>
                   <div className="mt-auto pt-6">
-                    <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-2.5">
                       {project.liveUrl && (
                         <a
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="group/demo inline-flex items-center gap-2 text-sm font-medium text-signal transition-colors hover:text-signal-soft"
+                          className="group/demo inline-flex h-10 items-center gap-2 rounded-full bg-signal px-4 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
                         >
                           Buka demo
                           <ArrowUpRight className="h-4 w-4 transition-transform group-hover/demo:translate-x-0.5 group-hover/demo:-translate-y-0.5" />

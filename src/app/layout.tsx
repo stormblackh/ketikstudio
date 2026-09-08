@@ -3,9 +3,6 @@ import { Fraunces, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { site } from "@/config/site";
-import { Header } from "@/components/site/header";
-import { Footer } from "@/components/site/footer";
-import { Grain } from "@/components/site/grain";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -76,10 +73,7 @@ export default function RootLayout({
         <noscript>
           <style>{`.reveal{opacity:1!important;transform:none!important}`}</style>
         </noscript>
-        <Grain />
-        <Header />
         {children}
-        <Footer />
         <Toaster />
       </body>
     </html>
