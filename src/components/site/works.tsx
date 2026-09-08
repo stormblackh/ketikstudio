@@ -50,6 +50,18 @@ function ProjectDialog({ project, children }: { project: Project; children: Reac
               {project.tagline}
             </DialogDescription>
 
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex h-11 items-center gap-2 rounded-full bg-signal px-5 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
+              >
+                Coba demonya langsung
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            )}
+
             <div className="mt-8 grid gap-8 md:grid-cols-2">
               <div>
                 <h4 className="font-mono text-[11px] tracking-[0.25em] text-signal uppercase">
@@ -108,8 +120,9 @@ function ProjectDialog({ project, children }: { project: Project; children: Reac
             </div>
 
             <p className="mt-9 border-t border-ink/10 pt-4 font-mono text-[10px] leading-relaxed tracking-[0.15em] text-ink/45 uppercase">
-              * Tiap studi kasus di sini kutulis lengkap dari riset sampai kode biar kamu bisa
-              menilai cara kerjaku langsung. Mau lihat demo atau detail teknisnya? Minta saja.
+              {project.liveUrl
+                ? "* Yang ini benar-benar jalan — bukan mockup. Ada yang mau ditanyakan soal cara membangunnya? Sapa saja."
+                : "* Tiap studi kasus di sini kutulis lengkap dari riset sampai kode biar kamu bisa menilai cara kerjaku langsung. Mau lihat demo atau detail teknisnya? Minta saja."}
             </p>
           </div>
         </div>
@@ -183,12 +196,25 @@ export function WorksGrid({ limit }: { limit?: number }) {
                     ))}
                   </div>
                   <div className="mt-auto pt-6">
-                    <ProjectDialog project={project}>
-                      <button className="group/btn inline-flex items-center gap-2 text-sm font-medium text-paper/85 transition-colors hover:text-paper">
-                        <span className="link-grow">Baca studi kasus</span>
-                        <ArrowUpRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-                      </button>
-                    </ProjectDialog>
+                    <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group/demo inline-flex items-center gap-2 text-sm font-medium text-signal transition-colors hover:text-signal-soft"
+                        >
+                          Buka demo
+                          <ArrowUpRight className="h-4 w-4 transition-transform group-hover/demo:translate-x-0.5 group-hover/demo:-translate-y-0.5" />
+                        </a>
+                      )}
+                      <ProjectDialog project={project}>
+                        <button className="group/btn inline-flex items-center gap-2 text-sm font-medium text-paper/85 transition-colors hover:text-paper">
+                          <span className="link-grow">Baca studi kasus</span>
+                          <ArrowUpRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                        </button>
+                      </ProjectDialog>
+                    </div>
                   </div>
                 </div>
               </article>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { site } from "@/config/site";
 import { Hero } from "@/components/site/hero";
 import { WorksGrid } from "@/components/site/works";
@@ -52,13 +52,24 @@ export default function Home() {
           />
           <WorksGrid limit={2} />
           <Reveal>
-            <Link
-              href="/karya"
-              className="group mt-12 inline-flex h-12 items-center gap-2 rounded-full border border-paper/25 px-6 text-sm font-medium text-paper transition-colors hover:border-paper"
-            >
-              Lihat semua karya
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </Link>
+            <div className="mt-12 flex flex-wrap items-center gap-4">
+              <Link
+                href="/karya"
+                className="group inline-flex h-12 items-center gap-2 rounded-full border border-paper/25 px-6 text-sm font-medium text-paper transition-colors hover:border-paper"
+              >
+                Lihat semua karya
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+              <a
+                href="https://ketikapp.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex h-12 items-center gap-2 rounded-full bg-signal px-6 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
+              >
+                Coba demo live: tes mengetik
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            </div>
           </Reveal>
         </div>
       </section>

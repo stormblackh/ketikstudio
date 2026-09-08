@@ -56,6 +56,8 @@ export type Project = {
   fitur: string[];
   stack: string[];
   hasil: string[];
+  // Kalau project-nya live & bisa dicoba, isi URL-nya — kartu otomatis dapat tombol "Buka demo"
+  liveUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -172,6 +174,38 @@ export const projects: Project[] = [
       "Tiket palsu praktis hilang — setiap QR hanya bisa dipakai sekali",
       "Panitia tidak lagi mencocokkan transfer manual",
     ],
+  },
+  {
+    id: "tes-ketik",
+    index: "05",
+    name: "TES KETIK",
+    tagline:
+      "Tes kecepatan mengetik di browser: kata ID/EN, statistik WPM, leaderboard. Yang ini bukan mockup — coba langsung.",
+    category: "Demo Interaktif",
+    tags: ["Web App", "Interaktif", "Keyboard-first"],
+    year: "2026",
+    image: "/work/work-ketik-typing.png",
+    imageAlt:
+      "Tampilan aplikasi tes kecepatan mengetik dengan latar krem, headline besar, dan pilihan durasi 15/30/60 detik",
+    masalah:
+      "Mau mengukur kecepatan mengetik, tool yang paling banyak dipakai itu bahasa Inggris semua. Buat yang kesehariannya ngetik bahasa Indonesia, angka hasilnya jadi kurang nyambung — kosakatanya beda, ritmenya beda, jadi terasa kurang adil.",
+    solusi:
+      "Aplikasi web tes mengetik dengan kata bahasa Indonesia (dan Inggris juga bisa). Timer baru jalan di ketikan pertama, jadi tidak ada momen 'siap-siap' yang bikin grogi. Begitu tes selesai, langsung keluar statistik WPM, akurasi, dan konsistensi — ada leaderboard buat pemicu biar makin rajin latihan.",
+    fitur: [
+      "Tiga durasi (15/30/60 detik) plus mode jumlah kata 10/25/50",
+      "Kata bahasa Indonesia & Inggris, lengkap dengan mode tanda baca",
+      "Mode kutipan untuk latihan mengetik kalimat panjang",
+      "Statistik WPM, akurasi, dan konsistensi",
+      "Leaderboard",
+      "Penuh shortcut keyboard: Tab tes baru, Esc ulangi kata",
+    ],
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+    hasil: [
+      "Live dan bisa dicoba langsung dari tombol di atas",
+      "Tanpa login — buka halaman, mulai mengetik",
+      "Semua proses berjalan di browser, tetap lancar dibuka dari HP",
+    ],
+    liveUrl: "https://ketikapp.vercel.app",
   },
 ];
 

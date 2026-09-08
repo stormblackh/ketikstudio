@@ -6,7 +6,7 @@ import { NextCta } from "@/components/site/next-cta";
 export const metadata: Metadata = {
   title: "Karya — Ketik. | Studi Kasus Pembuatan Website",
   description:
-    "Studi kasus lengkap: toko online fashion, dashboard analitik SaaS, website restoran, dan sistem e-ticket event. Masalah, solusi, fitur, dan hasil terukur.",
+    "Studi kasus lengkap: toko online fashion, dashboard analitik SaaS, website restoran, sistem e-ticket event, dan tes kecepatan mengetik yang bisa dicoba langsung. Masalah, solusi, fitur, dan hasil terukur.",
   alternates: { canonical: "/karya" },
 };
 
